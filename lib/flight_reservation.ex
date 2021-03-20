@@ -16,4 +16,6 @@ defmodule FlightReservation do
   defdelegate get_user(id), to: UserAgent, as: :get
   defdelegate get_booking(id), to: BookingAgent, as: :get
 
+  defdelegate get_all_bookings, to: BookingAgent, as: :get_all
+
 end
