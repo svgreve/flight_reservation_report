@@ -15,9 +15,6 @@ defmodule FlightReservation.Bookings.Report do
   end
 
   defp build_bookings_list(naive_from_date, naive_to_date) do
-    IO.inspect(naive_from_date)
-    IO.inspect(naive_to_date)
-
     BookingAgent.get_all()
     |> Map.values()
     |> Enum.filter(fn booking ->
@@ -46,11 +43,6 @@ defmodule FlightReservation.Bookings.Report do
   defp check_report_period(date, from_date, to_date) do
     check_from = NaiveDateTime.compare(date, from_date)
     check_to = NaiveDateTime.compare(date, to_date)
-
-    IO.inspect(check_from)
-    IO.inspect(check_to)
-
     check_from != :lt and check_to != :gt
-
   end
 end

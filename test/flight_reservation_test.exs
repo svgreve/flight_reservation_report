@@ -69,7 +69,7 @@ defmodule FlightReservationTest do
 
       {:ok, booking_id} = FlightReservation.create_booking(user_id, booking_params)
 
-      is_binary(booking_id)
+      assert is_binary(booking_id)
     end
 
     test "when the user does not exist, returns an error" do
