@@ -31,5 +31,15 @@ defmodule FlightReservation.Bookings.ReportTest do
 
       assert response == expected_response
     end
+
+    test "when dates are invalid, return an error" do
+      from_date = "2021-03-01"
+      to_date = "2021-04-31"
+      response = Report.create(from_date, to_date)
+      expected_response = {:error, "Invalid dates"}
+
+      assert response == expected_response
+
+    end
   end
 end
