@@ -16,9 +16,9 @@ defmodule FlightReservation.Bookings.CreateOrUpdate do
         }
       ) do
     case UserAgent.get(id_usuario) do
-      {:ok, id_usuario} ->
+      {:ok, user} ->
         save_booking(
-          Booking.build(id_usuario, {ano, mes, dia, hora, minuto}, cidade_origem, cidade_destino)
+          Booking.build(user.id, {ano, mes, dia, hora, minuto}, cidade_origem, cidade_destino)
         )
 
       {:error, _reason} ->

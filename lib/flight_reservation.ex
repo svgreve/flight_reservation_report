@@ -18,6 +18,6 @@ defmodule FlightReservation do
   defdelegate get_booking(id), to: BookingAgent, as: :get
 
   defdelegate get_all_bookings, to: BookingAgent, as: :get_all
-  defdelegate get_bookings_report(filename, from_date, to_date), to: BookingsReport, as: :create
+  defdelegate get_bookings_report(from_date, to_date), to: BookingsReport, as: :create
 
 end
